@@ -5,11 +5,15 @@ function update_shipping_icons() {
   for(var i = 0; i < buy_buttons.length; i++) {
     var button = buy_buttons[i];
     var item = button.item;
-    if(item.price + shopping_cart_total >= 20)
+    if(isFreeShipping(item.price, shopping_cart_total))
       button.show_free_shipping_icon();
     else
       button.hide_free_shipping_icon();
   }
+}
+
+function isFreeShipping(itemPrice, shoppingCartTotal){
+  return itemPrice + shoppingCartTotal >= 20
 }
 
 // Page 81 Answer

@@ -1,7 +1,12 @@
 // Page 77 It's your turn
 
 function update_tax_dom() {
-  set_tax_dom(shopping_cart_total * 0.10);
+  const tax = calc_tax(shopping_cart_total);
+  set_tax_dom(tax);
+}
+
+function calc_tax(total) {
+  return total * 0.10;
 }
 
 // Page 78 Answer
